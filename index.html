@@ -4,11 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Good Fire vs. Bad Fire</title>
-    <!-- Load Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
-    <!-- Load Inter font --><link rel="preconnect" href="https://fonts.googleapis.com">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <!-- Load Lucide icons --><script src="https://unpkg.com/lucide-icons"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide-icons"></script>
 
     <style>
         body {
@@ -127,13 +133,16 @@
 </head>
 <body class="bg-blue-50 text-gray-800 min-h-screen">
 
-    <!-- Main Application Container --><div id="app" class="container mx-auto p-4 md:p-8 max-w-5xl">
+    <!-- Main App Container -->
+    <div id="app" class="container mx-auto p-4 md:p-8 max-w-5xl">
 
-        <!-- Header --><header class="text-center mb-8">
+        <!-- Header -->
+        <header class="text-center mb-8">
             <h1 class="text-4xl md:text-5xl font-bold text-blue-900 mb-4">Good Fire vs. Bad Fire 🔥</h1>
             <p class="text-lg text-gray-700 mb-6">An interactive lesson on prairie burns</p>
             
-            <!-- Grade Band Toggle --><div class="flex justify-center items-center bg-white p-2 rounded-full shadow-md max-w-xs mx-auto">
+            <!-- Grade Band Toggle -->
+            <div class="flex justify-center items-center bg-white p-2 rounded-full shadow-md max-w-xs mx-auto">
                 <button id="toggle-k2" 
                         class="w-1/2 py-2 px-4 rounded-full text-sm md:text-base font-semibold transition-all">
                     Grades K-2
@@ -145,17 +154,21 @@
             </div>
         </header>
 
-        <!-- Main Content: Steps will be shown/hidden here --><main id="lesson-content" class="bg-white p-6 md:p-8 rounded-2xl shadow-xl min-h-[500px]">
+        <!-- Lesson Content Area -->
+        <main id="lesson-content" class="bg-white p-6 md:p-8 rounded-2xl shadow-xl min-h-[500px]">
             
-            <!-- Step 1: Warm-Up --><section id="step-1" class="lesson-step">
+            <!-- Step 1: Warm-Up -->
+            <section id="step-1" class="lesson-step">
                 <h2 class="text-3xl font-bold text-blue-800 mb-4">Step 1: Warm-Up</h2>
                 <div class="text-lg space-y-4">
                     <p class="font-semibold text-gray-700">Teacher's Prompt:</p>
-                    <div id="warmup-k2" class="grade-content p-4 bg-yellow-100 border-l-4 border-yellow-500 rounded-r-lg" data-grade="k-2">
+                    <!-- K-2 Content -->
+                    <div class="grade-content p-4 bg-yellow-100 border-l-4 border-yellow-500 rounded-r-lg" data-grade="k-2">
                         <p>"Look at a picture of a prairie. What do you see? Now, imagine a fire on the prairie. Do you think fire can be good? How could fire *help* a prairie?"</p>
                         <p class="mt-2 text-sm text-gray-600">(Encourage students to share ideas about clearing old plants or helping seeds.)</p>
                     </div>
-                    <div id="warmup-3-5" class="grade-content p-4 bg-yellow-100 border-l-4 border-yellow-500 rounded-r-lg" data-grade="3-5">
+                    <!-- 3-5 Content -->
+                    <div class="grade-content p-4 bg-yellow-100 border-l-4 border-yellow-500 rounded-r-lg" data-grade="3-5">
                         <p>"Today we're talking about 'prescribed burns,' which is a fancy way of
                         saying a planned, 'Good Fire.' To have *any* fire, you need three things. Can anyone remember the 'Fire Triangle'?"</p>
                         <ul class="list-disc list-inside mt-2 ml-4">
@@ -168,41 +181,45 @@
                 </div>
             </section>
 
-            <!-- Step 2: Prairie Visualizer --><section id="step-2" class="lesson-step" style="display: none;">
+            <!-- Step 2: Prairie Visualizer -->
+            <section id="step-2" class="lesson-step" style="display: none;">
                 <h2 class="text-3xl font-bold text-blue-800 mb-4">Step 2: Prairie Visualizer</h2>
                 
-                <!-- K-2 Content --><div id="visualizer-k2" class="grade-content space-y-4" data-grade="k-2">
+                <!-- K-2 Content -->
+                <div class="grade-content space-y-4" data-grade="k-2">
                     <p class="text-lg">Let's see what a prairie looks like before, during, and after a "Good Fire"!</p>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
                         <div>
                             <h3 class="text-xl font-semibold mb-2">1. Before the Burn</h3>
-                            <img id="k2-before-img" src="https://placehold.co/400x300/A0A0A0/FFFFFF?text=Overgrown+Prairie" alt="Overgrown prairie with old, brown grass" class="rounded-lg shadow-md w-full">
+                            <img id="k2-before-img" src="https://placehold.co/400x300/A0A0A0/FFFFFF?text=Overgrown+Prairie" alt="An overgrown prairie with tall, dry, brown grass." class="rounded-lg shadow-md w-full h-48 object-cover">
                             <p class="mt-2 text-sm text-gray-600">Lots of old, dry, brown plants.</p>
                         </div>
                         <div>
                             <h3 class="text-xl font-semibold mb-2">2. During the Burn</h3>
-                            <img id="k2-during-img" src="https://placehold.co/400x300/FF6347/FFFFFF?text=Controlled+Fire" alt="Controlled, low-burning fire on the prairie" class="rounded-lg shadow-md w-full">
+                            <img id="k2-during-img" src="https://placehold.co/400x300/FF6347/FFFFFF?text=Controlled+Fire" alt="A controlled fire with low flames burning across the prairie." class="rounded-lg shadow-md w-full h-48 object-cover">
                             <p class="mt-2 text-sm text-gray-600">The fire burns away the old plants safely.</p>
                         </div>
                         <div>
                             <h3 class="text-xl font-semibold mb-2">3. After the Burn</h3>
-                            <img id="k2-after-img" src="https://placehold.co/400x300/32CD32/FFFFFF?text=New+Green+Plants" alt="New green plants growing after the fire" class="rounded-lg shadow-md w-full">
+                            <img id="k2-after-img" src="https://placehold.co/400x300/32CD32/FFFFFF?text=New+Green+Plants" alt="New green plants and flowers sprouting from the dark, burned soil." class="rounded-lg shadow-md w-full h-48 object-cover">
                             <p class="mt-2 text-sm text-gray-600">New, green plants have space to grow!</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- 3-5 Content --><div id="visualizer-3-5" class="grade-content space-y-4" data-grade="3-5">
+                <!-- 3-5 Content -->
+                <div class="grade-content space-y-4" data-grade="3-5">
                     <p class="text-lg">Drag the slider to see the change from *before* the burn to *after*!</p>
                     <div class="slider-visualizer mx-auto">
-                        <img id="v35-before-img" src="https://placehold.co/600x400/A0A0A0/FFFFFF?text=Before:+Overgrown" alt="Overgrown prairie before a burn" class="before-image">
-                        <img id="v35-after-img" src="https://placehold.co/600x400/32CD32/FFFFFF?text=After:+New+Growth" alt="New green growth after a burn" class="after-image">
+                        <img id="v35-before-img" src="https://placehold.co/600x400/A0A0A0/FFFFFF?text=Before:+Overgrown" alt="An overgrown prairie with tall, dry grass before a burn." class="before-image h-96 object-cover">
+                        <img id="v35-after-img" src="https://placehold.co/600x400/32CD32/FFFFFF?text=After:+New+Growth" alt="Lush green prairie plants growing back after a fire." class="after-image h-96 object-cover">
                         <div class="slider-handle"></div>
                         <input type="range" min="0" max="100" value="50" class="slider-input" id="v35-slider-input" aria-label="Slide to compare before and after images">
                     </div>
                 </div>
                 
-                <!-- Image Upload Section --><div class="mt-8 p-4 bg-gray-100 rounded-lg">
+                <!-- Image Upload Section -->
+                <div class="mt-8 p-4 bg-gray-100 rounded-lg">
                     <h4 class="text-lg font-semibold mb-2">Teacher: Upload Your Own Images</h4>
                     <p class="text-sm text-gray-600 mb-4">Upload your own "Before" and "After" photos from a local prairie!</p>
                     <div class="flex flex-col sm:flex-row gap-4">
@@ -218,36 +235,45 @@
                 </div>
             </section>
 
-            <!-- Step 3: Sorting Game --><section id="step-3" class="lesson-step" style="display: none;">
+            <!-- Step 3: Sorting Game -->
+            <section id="step-3" class="lesson-step" style="display: none;">
                 <h2 class="text-3xl font-bold text-blue-800 mb-4">Step 3: Sorting Game</h2>
                 <p class="text-lg mb-4">Is it a "Good Fire" ✅ or a "Bad Fire" ⛔? Let's sort them!</p>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!-- Good Fire Column --><div>
+                    <!-- Good Fire Bin -->
+                    <div>
                         <h3 class="text-2xl font-bold text-center text-green-700 bg-green-100 p-3 rounded-lg mb-4">Good Fire ✅</h3>
                         <div id="good-fire-bin" class="min-h-[200px] bg-green-50 p-4 rounded-lg border-2 border-dashed border-green-300 space-y-2">
-                            <!-- Cards will be moved here --></div>
+                            <!-- Sorted cards go here -->
+                        </div>
                     </div>
                     
-                    <!-- Bad Fire Column --><div>
+                    <!-- Bad Fire Bin -->
+                    <div>
                         <h3 class="text-2xl font-bold text-center text-red-700 bg-red-100 p-3 rounded-lg mb-4">Bad Fire ⛔</h3>
                         <div id="bad-fire-bin" class="min-h-[200px] bg-red-50 p-4 rounded-lg border-2 border-dashed border-red-300 space-y-2">
-                            <!-- Cards will be moved here --></div>
+                            <!-- Sorted cards go here -->
+                        </div>
                     </div>
                 </div>
                 
-                <!-- Unsorted Cards --><div class="mt-8">
+                <!-- Sorting Deck -->
+                <div class="mt-8">
                     <h3 class="text-2xl font-semibold text-center mb-4">Scenarios to Sort:</h3>
                     <div id="sorting-deck" class="flex flex-wrap justify-center gap-4">
-                        <!-- Cards will be generated by JS --></div>
+                        <!-- Sortable cards go here -->
+                    </div>
                 </div>
             </section>
 
-            <!-- Step 4: Quick Quiz --><section id="step-4" class="lesson-step" style="display: none;">
+            <!-- Step 4: Quick Quiz -->
+            <section id="step-4" class="lesson-step" style="display: none;">
                 <h2 class="text-3xl font-bold text-blue-800 mb-4">Step 4: Quick Quiz</h2>
                 
                 <div id="quiz-container" class="max-w-xl mx-auto">
-                    <!-- Quiz questions will be injected here --></div>
+                    <!-- Quiz questions load here -->
+                </div>
                 
                 <div id="quiz-result" class="text-center mt-8" style="display: none;">
                     <h3 class="text-3xl font-bold text-blue-800">Quiz Complete!</h3>
@@ -258,27 +284,29 @@
                 </div>
             </section>
 
-            <!-- Step 5: Safety Rules --><section id="step-5" class="lesson-step">
+            <!-- Step 5: Safety Rules -->
+            <section id="step-5" class="lesson-step" style="display: none;">
                 <h2 class="text-3xl font-bold text-blue-800 mb-4">Step 5: Safety Rules</h2>
                 
-                <!-- K-2 Content --><div id="safety-k2" class="grade-content space-y-6" data-grade="k-2">
-                    <div>
-                        <h3 class="text-2xl font-semibold text-gray-800 mb-4">Fire Safety Video</h3>
-                        <p class="text-lg mb-4">Watch this video with Sparky the Fire Dog to learn all about fire safety!</p>
-                        <div class="w-full aspect-video rounded-lg overflow-hidden shadow-lg border-4 border-white">
-                            <iframe 
-                                class="w-full h-full" 
-                                src="https://www.youtube.com/embed/gHrPLeKzLg4" 
-                                title="Sparky Says Join My Fire Safety Club Video" 
-                                frameborder="0" 
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                allowfullscreen>
-                            </iframe>
-                        </div>
+                <!-- K-2 Content -->
+                <div class="grade-content space-y-6" data-grade="k-2">
+                    <h3 class="text-2xl font-semibold text-blue-800 mb-2">Fire Safety Video</h3>
+                    <p class="text-lg mb-4">Let's watch a video with Sparky the Fire Dog to learn how to be safe!</p>
+                    <!-- Responsive video wrapper -->
+                    <div class="relative rounded-lg overflow-hidden shadow-lg" style="padding-top: 56.25%;">
+                        <iframe 
+                            class="absolute top-0 left-0 w-full h-full" 
+                            src="https://www.youtube.com/embed/gHrPLeKzLg4" 
+                            title="Sparky Says Join My Fire Safety Club Video" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
                     </div>
                 </div>
 
-                <!-- 3-5 Content --><div id="safety-3-5" class="grade-content space-y-6" data-grade="3-5">
+                <!-- 3-5 Content -->
+                <div class="grade-content space-y-6" data-grade="3-5">
                     <div>
                         <h3 class="text-2xl font-semibold text-gray-800 mb-2">The Burn Crew & Conditions</h3>
                         <ul class="list-disc list-inside space-y-1 text-lg">
@@ -318,12 +346,40 @@
                 </div>
             </section>
 
-            <!-- Step 6: Safe-to-Burn Simulator --><section id="step-6" class="lesson-step" style="display: none;">
+            <!-- Step 6: Safe-to-Burn Simulator -->
+            <section id="step-6" class="lesson-step" style="display: none;">
                 <h2 class="text-3xl font-bold text-blue-800 mb-4">Step 6: Safe-to-Burn Simulator</h2>
                 <p class="text-lg mb-6">A "Burn Boss" has to check the weather. Use the sliders to see if today is safe to burn!</p>
-                
+
+                <!-- Live Weather Display -->
+                <div id="live-weather-container" class="mb-8 p-4 bg-indigo-100 border border-indigo-300 rounded-lg">
+                    <h4 class="text-xl font-semibold text-indigo-800 mb-2">Live Weather Check</h4>
+                    <div id="live-weather-status" class="text-indigo-700">
+                        <i data-lucide="loader-2" class="inline-block animate-spin mr-2"></i>Attempting to fetch your local weather...
+                    </div>
+                    <div id="live-weather-data" class="hidden grid-cols-2 sm:grid-cols-4 gap-4 mt-4">
+                        <div class="bg-white p-3 rounded-lg shadow">
+                            <div class="text-sm text-gray-500">Temp</div>
+                            <div id="live-temp" class="text-2xl font-bold">--</div>
+                        </div>
+                        <div class="bg-white p-3 rounded-lg shadow">
+                            <div class="text-sm text-gray-500">Humidity</div>
+                            <div id="live-humidity" class="text-2xl font-bold">--</div>
+                        </div>
+                        <div class="bg-white p-3 rounded-lg shadow">
+                            <div class="text-sm text-gray-500">Wind</div>
+                            <div id="live-wind" class="text-2xl font-bold">--</div>
+                        </div>
+                        <div class="bg-white p-3 rounded-lg shadow">
+                            <div class="text-sm text-gray-500">Dryness</div>
+                            <div class="text-xl font-bold text-gray-700">(Manual)</div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                    <!-- Sliders --><div class="space-y-6">
+                    <!-- Sliders -->
+                    <div class="space-y-6">
                         <div>
                             <label for="wind-slider" class="flex justify-between text-lg font-semibold">
                                 <span>Wind Speed</span>
@@ -362,7 +418,8 @@
                         </div>
                     </div>
                     
-                    <!-- Safety Meter --><div class="flex flex-col items-center justify-center">
+                    <!-- Safety Meter -->
+                    <div class="flex flex-col items-center justify-center">
                         <div id="safety-meter" class="w-64 h-64 rounded-full flex items-center justify-center text-white text-center p-4 transition-all duration-300 ease-in-out shadow-xl">
                             <div class="text-center">
                                 <div id="safety-icon" class="text-6xl mb-2"></div>
@@ -373,7 +430,8 @@
                     </div>
                 </div>
 
-                <!-- Data Collector Button --><div class="text-center mt-12">
+                <!-- Data Collector Button -->
+                <div class="text-center mt-12">
                     <button id="open-data-collector-btn" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-all shadow-lg">
                         <i data-lucide="clipboard-list" class="inline-block mr-2 -mt-1"></i>
                         Open Data Collector
@@ -381,7 +439,8 @@
                 </div>
             </section>
 
-            <!-- Step 7: Celebration Certificate --><section id="step-7" class="lesson-step" style="display: none;">
+            <!-- Step 7: Certificate -->
+            <section id="step-7" class="lesson-step" style="display: none;">
                 <h2 class="text-3xl font-bold text-blue-800 mb-6 text-center">Step 7: You're a Prairie Expert!</h2>
                 
                 <p class="text-lg text-center mb-6">Type your name below to get your official certificate.</p>
@@ -391,7 +450,8 @@
                     <input type="text" id="student-name" class="w-full text-2xl p-3 border-2 border-blue-300 rounded-lg shadow-inner focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Type name here...">
                 </div>
 
-                <!-- Certificate --><div id="certificate-section" class="bg-gray-50">
+                <!-- Certificate -->
+                <div id="certificate-section" class="bg-gray-50">
                     <div id="certificate-wrapper" class="w-full max-w-4xl mx-auto border-8 border-blue-800 p-8 md:p-12 rounded-lg bg-white shadow-2xl text-center">
                         <p class="text-2xl font-semibold text-gray-600">This certificate is awarded to</p>
                         <h3 id="certificate-name" class="text-5xl md:text-6xl font-bold text-blue-900 my-8 min-h-[72px] p-2 border-b-4 border-gray-300">
@@ -417,9 +477,10 @@
 
         </main>
 
-        <!-- Navigation Buttons --><footer class="flex justify-between items-center mt-8">
+        <!-- Footer Navigation -->
+        <footer class="flex justify-between items-center mt-8">
             <button id="prev-btn" 
-                    class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-6 rounded-full text-lg transition-all opacity-50 cursor-not-allowed" 
+                    class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-6 rounded-full text-lg transition-all opacity-50 cursor-not-allowed"
                     disabled>
                 &larr; Previous
             </button>
@@ -431,21 +492,25 @@
         </footer>
     </div>
 
-    <!-- Data Collector Modal --><div id="data-collector-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4" style="display: none; z-index: 100;">
+    <!-- Data Collector Modal -->
+    <div id="data-collector-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4" style="display: none; z-index: 100;">
         <div class="bg-white w-full max-w-4xl max-h-[90vh] rounded-2xl shadow-2xl flex flex-col">
-            <!-- Modal Header --><div class="flex justify-between items-center p-6 border-b border-gray-200">
+            <!-- Modal Header -->
+            <div class="flex justify-between items-center p-6 border-b border-gray-200">
                 <h2 class="text-3xl font-bold text-blue-900">
                     <i data-lucide="clipboard-list" class="inline-block mr-2 -mt-1"></i>
                     Prairie Burn Data Collector
                 </h2>
-                <button id="close-data-collector-btn" class="text-gray-400 hover:text-gray-600">
+                <button id="close-modal-btn" class="text-gray-400 hover:text-gray-600">
                     <i data-lucide="x" class="w-8 h-8"></i>
                 </button>
             </div>
             
-            <!-- Modal Body --><div class="p-6 md:p-8 overflow-y-auto space-y-8">
+            <!-- Modal Body -->
+            <div class="p-6 md:p-8 overflow-y-auto space-y-8">
                 
-                <!-- Section 1: Live Weather --><section class="p-6 bg-gray-100 rounded-lg">
+                <!-- Live Weather Section -->
+                <section class="p-6 bg-gray-100 rounded-lg">
                     <h3 class="text-2xl font-semibold text-gray-800 mb-4">Get Live Weather Data</h3>
                     <div class="flex flex-col sm:flex-row gap-4">
                         <input type="text" id="city-input" placeholder="Enter city name (e.g., Chicago)" class="flex-grow p-3 border border-gray-300 rounded-lg shadow-inner">
@@ -478,7 +543,8 @@
                     </div>
                 </section>
                 
-                <!-- Section 2: Manual Data Entry --><section>
+                <!-- Manual Log Section -->
+                <section>
                     <h3 class="text-2xl font-semibold text-gray-800 mb-4">Manual Data Log</h3>
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
                         <div>
@@ -509,7 +575,8 @@
                     </div>
                 </section>
                 
-                <!-- Section 3: Data Table --><section>
+                <!-- Log Table Section -->
+                <section>
                     <h3 class="text-2xl font-semibold text-gray-800 mb-4">Logged Data</h3>
                     <div class="max-h-64 overflow-y-auto border border-gray-200 rounded-lg">
                         <table class="min-w-full divide-y divide-gray-200">
@@ -524,7 +591,8 @@
                                 </tr>
                             </thead>
                             <tbody id="data-log-table" class="bg-white divide-y divide-gray-200">
-                                <!-- Log entries will be added here --><tr id="no-data-row">
+                                <!-- No data row -->
+                                <tr id="no-data-row">
                                     <td colspan="6" class="px-4 py-4 text-center text-gray-500">No data logged yet.</td>
                                 </tr>
                             </tbody>
@@ -542,9 +610,6 @@
 
 
 <script>
-// Wait for the DOM to be fully loaded before running any script
-document.addEventListener('DOMContentLoaded', () => {
-
     // --- GLOBAL STATE ---
     let currentGradeBand = 'k-2';
     let currentStep = 1;
@@ -624,65 +689,57 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     // --- INITIALIZATION ---
-    setGradeBand(currentGradeBand);
-    updateStepUI();
-    initSortingGame();
-    initQuiz();
-    updateSimulator();
-    document.getElementById('certificate-date').textContent = new Date().toLocaleDateString();
-    // Init lucide icons
-    if (window.lucide) {
-        lucide.createIcons();
-    }
-    
-    // --- ADD ALL EVENT LISTENERS ---
-
-    // Navigation
-    document.getElementById('toggle-k2').addEventListener('click', () => setGradeBand('k-2'));
-    document.getElementById('toggle-35').addEventListener('click', () => setGradeBand('3-5'));
-    document.getElementById('prev-btn').addEventListener('click', () => changeStep('prev'));
-    document.getElementById('next-btn').addEventListener('click', () => changeStep('next'));
-
-    // Step 2: Visualizer
-    document.getElementById('v35-slider-input').addEventListener('input', (e) => updateSlider(e.target.value));
-    document.getElementById('before-upload').addEventListener('change', (e) => uploadImage(e, 'before'));
-    document.getElementById('after-upload').addEventListener('change', (e) => uploadImage(e, 'after'));
-
-    // Step 3: Sorting Game (Delegated)
-    document.getElementById('sorting-deck').addEventListener('click', (e) => {
-        if (e.target.tagName === 'BUTTON') {
-            const card = e.target.closest('.sort-card');
-            const itemId = parseInt(card.dataset.id);
-            const chosenBin = e.target.dataset.bin;
-            sortCard(itemId, chosenBin);
+    document.addEventListener('DOMContentLoaded', () => {
+        // Init lucide icons
+        if (window.lucide) {
+            lucide.createIcons();
         }
+
+        // Set initial state
+        setGradeBand(currentGradeBand);
+        updateStepUI();
+        initSortingGame();
+        initQuiz();
+        updateSimulator();
+        fetchLiveWeatherForSimulator(); // Fetch weather on load
+        
+        document.getElementById('certificate-date').textContent = new Date().toLocaleDateString();
+        
+        // --- ADD ALL EVENT LISTENERS ---
+        
+        // Grade toggles
+        document.getElementById('toggle-k2').addEventListener('click', () => setGradeBand('k-2'));
+        document.getElementById('toggle-35').addEventListener('click', () => setGradeBand('3-5'));
+
+        // Step navigation
+        document.getElementById('prev-btn').addEventListener('click', () => changeStep('prev'));
+        document.getElementById('next-btn').addEventListener('click', () => changeStep('next'));
+        
+        // Step 2: Visualizer
+        document.getElementById('v35-slider-input').addEventListener('input', (e) => updateSlider(e.target.value));
+        document.getElementById('before-upload').addEventListener('change', (e) => uploadImage(e, 'before'));
+        document.getElementById('after-upload').addEventListener('change', (e) => uploadImage(e, 'after'));
+
+        // Step 4: Quiz
+        document.getElementById('restart-quiz-btn').addEventListener('click', restartQuiz);
+
+        // Step 6: Simulator
+        document.getElementById('wind-slider').addEventListener('input', updateSimulator);
+        document.getElementById('humidity-slider').addEventListener('input', updateSimulator);
+        document.getElementById('dryness-slider').addEventListener('input', updateSimulator);
+        document.getElementById('open-data-collector-btn').addEventListener('click', showDataCollector);
+
+        // Step 7: Certificate
+        document.getElementById('student-name').addEventListener('input', (e) => updateCertificateName(e.target.value));
+        document.getElementById('print-cert-btn').addEventListener('click', () => window.print());
+
+        // Data Collector Modal
+        document.getElementById('close-modal-btn').addEventListener('click', hideDataCollector);
+        document.getElementById('fetch-city-btn').addEventListener('click', fetchWeatherByCity);
+        document.getElementById('fetch-geo-btn').addEventListener('click', fetchWeatherByGeo);
+        document.getElementById('add-log-btn').addEventListener('click', addLogEntry);
+        document.getElementById('download-csv-btn').addEventListener('click', downloadCSV);
     });
-
-    // Step 4: Quiz
-    document.getElementById('restart-quiz-btn').addEventListener('click', restartQuiz);
-    document.getElementById('quiz-container').addEventListener('click', (e) => {
-        if (e.target.tagName === 'BUTTON') {
-            selectAnswer(e.target, e.target.dataset.option);
-        }
-    });
-    
-    // Step 6: Simulator
-    document.getElementById('wind-slider').addEventListener('input', updateSimulator);
-    document.getElementById('humidity-slider').addEventListener('input', updateSimulator);
-    document.getElementById('dryness-slider').addEventListener('input', updateSimulator);
-    document.getElementById('open-data-collector-btn').addEventListener('click', showDataCollector);
-
-    // Step 7: Certificate
-    document.getElementById('student-name').addEventListener('input', (e) => updateCertificateName(e.target.value));
-    document.getElementById('print-cert-btn').addEventListener('click', () => window.print());
-
-    // Data Collector Modal
-    document.getElementById('close-data-collector-btn').addEventListener('click', hideDataCollector);
-    document.getElementById('fetch-city-btn').addEventListener('click', fetchWeatherByCity);
-    document.getElementById('fetch-geo-btn').addEventListener('click', fetchWeatherByGeo);
-    document.getElementById('add-log-btn').addEventListener('click', addLogEntry);
-    document.getElementById('download-csv-btn').addEventListener('click', downloadCSV);
-
 
     // --- GRADE BAND TOGGLE ---
     function setGradeBand(band) {
@@ -703,10 +760,9 @@ document.addEventListener('DOMContentLoaded', () => {
             k2Btn.classList.remove('bg-blue-600', 'text-white');
         }
         
-        // Toggle all content sections using data-grade attribute
-        // Reading from currentGradeBand (set above) instead of 'band' param just to be safe
-        document.querySelectorAll('.grade-content[data-grade]').forEach(el => {
-            if (el.dataset.grade === currentGradeBand) {
+        // Toggle all content sections
+        document.querySelectorAll('.grade-content').forEach(el => {
+            if (el.dataset.grade === band) {
                 el.style.display = 'block';
             } else {
                 el.style.display = 'none';
@@ -805,16 +861,23 @@ document.addEventListener('DOMContentLoaded', () => {
         sortableItems.forEach(item => {
             const card = document.createElement('div');
             card.id = `card-${item.id}`;
-            card.dataset.id = item.id;
             card.className = 'sort-card w-full md:w-auto bg-white p-4 rounded-lg shadow-md border border-gray-200';
             card.innerHTML = `
                 <p class="text-base text-gray-800 mb-3">${item.text}</p>
                 <div class="flex justify-around">
-                    <button class="bg-green-200 text-green-800 hover:bg-green-300 font-semibold py-1 px-4 rounded-full text-sm" data-bin="good">Good ✅</button>
-                    <button class="bg-red-200 text-red-800 hover:bg-red-300 font-semibold py-1 px-4 rounded-full text-sm" data-bin="bad">Bad ⛔</button>
+                    <button class="sort-good-btn bg-green-200 text-green-800 hover:bg-green-300 font-semibold py-1 px-4 rounded-full text-sm" data-item-id="${item.id}">Good ✅</button>
+                    <button class="sort-bad-btn bg-red-200 text-red-800 hover:bg-red-300 font-semibold py-1 px-4 rounded-full text-sm" data-item-id="${item.id}">Bad ⛔</button>
                 </div>
             `;
             deck.appendChild(card);
+        });
+
+        // Add event listeners to new buttons
+        deck.querySelectorAll('.sort-good-btn').forEach(btn => {
+            btn.addEventListener('click', () => sortCard(parseInt(btn.dataset.itemId), 'good'));
+        });
+        deck.querySelectorAll('.sort-bad-btn').forEach(btn => {
+            btn.addEventListener('click', () => sortCard(parseInt(btn.dataset.itemId), 'bad'));
         });
     }
 
@@ -822,7 +885,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const item = sortableItems.find(i => i.id === itemId);
         const card = document.getElementById(`card-${itemId}`);
         
-        if (!item || !card || card.parentElement.id !== 'sorting-deck') return; // Already sorted
+        if (!item || !card) return;
 
         const correct = item.type === chosenBin;
         const targetBin = (chosenBin === 'good') ? 
@@ -830,7 +893,8 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('bad-fire-bin');
         
         // Remove action buttons
-        card.querySelector('div').remove();
+        const buttonDiv = card.querySelector('div');
+        if (buttonDiv) buttonDiv.remove();
         
         // Add feedback
         if (correct) {
@@ -868,7 +932,8 @@ document.addEventListener('DOMContentLoaded', () => {
         
         let optionsHtml = '';
         q.options.forEach(option => {
-            optionsHtml += `<button class="w-full text-left text-lg p-4 bg-gray-100 hover:bg-blue-100 border border-gray-200 rounded-lg transition-all" data-option="${option}">
+            // Use data-option to store the answer
+            optionsHtml += `<button class="quiz-option-btn w-full text-left text-lg p-4 bg-gray-100 hover:bg-blue-100 border border-gray-200 rounded-lg transition-all" data-option="${option}">
                 ${option}
             </button>`;
         });
@@ -880,6 +945,11 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
             <div id="quiz-feedback" class="mt-6"></div>
         `;
+
+        // Add event listeners to the new option buttons
+        quizContainer.querySelectorAll('.quiz-option-btn').forEach(btn => {
+            btn.addEventListener('click', () => selectAnswer(btn, btn.dataset.option));
+        });
     }
     
     function selectAnswer(buttonEl, selectedOption) {
@@ -918,23 +988,86 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('quiz-total').textContent = quizData.length;
     }
     
-    // --- STEP 6: SIMULATOR ---
+    // --- STEP 6: SIMULATOR & LIVE WEATHER ---
+    
+    function fetchLiveWeatherForSimulator() {
+        const statusEl = document.getElementById('live-weather-status');
+        if (!navigator.geolocation) {
+            statusEl.innerHTML = '<i data-lucide="x-circle" class="inline-block mr-2"></i> Geolocation is not supported by your browser.';
+            if (window.lucide) lucide.createIcons();
+            return;
+        }
+
+        navigator.geolocation.getCurrentPosition(
+            (position) => {
+                const { latitude, longitude } = position.coords;
+                const apiUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,relative_humidity_2m,wind_speed_10m&temperature_unit=fahrenheit&wind_speed_unit=mph&precipitation_unit=inch`;
+                
+                fetch(apiUrl)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data && data.current) {
+                            statusEl.style.display = 'none';
+                            document.getElementById('live-weather-data').classList.remove('hidden');
+                            document.getElementById('live-weather-data').classList.add('grid');
+                            
+                            const current = data.current;
+                            document.getElementById('live-temp').textContent = `${Math.round(current.temperature_2m)}°F`;
+                            document.getElementById('live-humidity').textContent = `${current.relative_humidity_2m}%`;
+                            document.getElementById('live-wind').textContent = `${Math.round(current.wind_speed_10m)} mph`;
+                            
+                            setSlidersFromWeather(current);
+                        } else {
+                            throw new Error("Invalid weather data format.");
+                        }
+                    })
+                    .catch(err => {
+                        statusEl.innerHTML = '<i data-lucide="alert-triangle" class="inline-block mr-2"></i> Could not fetch weather data.';
+                        if (window.lucide) lucide.createIcons();
+                    });
+            },
+            () => {
+                statusEl.innerHTML = '<i data-lucide="alert-triangle" class="inline-block mr-2"></i> Please allow location access to see live weather.';
+                if (window.lucide) lucide.createIcons();
+            }
+        );
+    }
+    
+    function setSlidersFromWeather(current) {
+        // Convert weather data to 0-100 slider scale
+        
+        // Wind: 0mph = 0, 25+mph = 100
+        let windVal = Math.min(Math.round((current.wind_speed_10m / 25) * 100), 100);
+        
+        // Humidity: 0% = 100, 100% = 0 (slider is inverted: 0=dry, 100=damp)
+        let humidityVal = current.relative_humidity_2m;
+        
+        document.getElementById('wind-slider').value = windVal;
+        document.getElementById('humidity-slider').value = humidityVal;
+        // We leave 'dryness' at default 50 as it's not from the API
+        
+        updateSimulator();
+    }
+
     function updateSimulator() {
         const wind = parseInt(document.getElementById('wind-slider').value);
-        const humidity = parseInt(document.getElementById('humidity-slider').value);
-        const dryness = parseInt(document.getElementById('dryness-slider').value);
+        const humidity = parseInt(document.getElementById('humidity-slider').value); // 0=dry, 100=damp
+        const dryness = parseInt(document.getElementById('dryness-slider').value); // 0=wet, 100=dry
 
         // Update value labels
-        document.getElementById('wind-value').textContent = getSliderLabel(wind);
-        document.getElementById('humidity-value').textContent = getSliderLabel(humidity, true);
-        document.getElementById('dryness-value').textContent = getSliderLabel(dryness);
+        document.getElementById('wind-value').textContent = getSliderLabel(wind, 'wind');
+        document.getElementById('humidity-value').textContent = getSliderLabel(humidity, 'humidity');
+        document.getElementById('dryness-value').textContent = getSliderLabel(dryness, 'dryness');
 
         // Simple safety score calculation
         // High wind is bad (high value)
-        // High humidity is good (lowers score)
+        // Low humidity is bad (low value on slider, but we'll treat it as high risk)
         // High dryness is bad (high value)
-        // Perfect score is 0, worst is 200 (wind 100 + dryness 100 - humidity 0)
-        let safetyScore = wind + dryness - humidity;
+        
+        // Re-map humidity: 0 (dry) = 100 risk, 100 (damp) = 0 risk.
+        const humidityRisk = 100 - humidity; 
+        
+        let safetyScore = wind + dryness + humidityRisk; // Max score 300
 
         const meter = document.getElementById('safety-meter');
         const status = document.getElementById('safety-status');
@@ -944,19 +1077,19 @@ document.addEventListener('DOMContentLoaded', () => {
         // Clear old classes
         meter.classList.remove('bg-green-500', 'bg-yellow-500', 'bg-red-500');
 
-        if (safetyScore < 40) {
+        if (safetyScore < 100) { // < 33%
             // SAFE
             meter.classList.add('bg-green-500');
             status.textContent = "SAFE";
             message.textContent = "Conditions are good. It's safe to burn!";
             icon.innerHTML = '✅';
-        } else if (safetyScore < 100) {
+        } else if (safetyScore < 200) { // < 66%
             // CAUTION
             meter.classList.add('bg-yellow-500');
             status.textContent = "CAUTION";
             message.textContent = "It's a bit risky. Proceed with caution.";
             icon.innerHTML = '⚠️';
-        } else {
+        } else { // >= 66%
             // DANGER
             meter.classList.add('bg-red-500');
             status.textContent = "DANGER";
@@ -965,12 +1098,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function getSliderLabel(value, isHumidity = false) {
+    function getSliderLabel(value, type) {
         let low, high;
-        if(isHumidity) { // Humidity is inverted
-            low = "Very Damp"; high = "Very Dry";
-        } else {
-            low = "Low"; high = "High";
+        if(type === 'humidity') {
+            low = "Very Dry"; high = "Very Damp";
+        } else if (type === 'wind') {
+            low = "Calm"; high = "Very Windy!";
+        } else { // dryness
+            low = "Wet Plants"; high = "Very Dry Plants!";
         }
         
         if (value < 33) return low;
@@ -1139,7 +1274,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function downloadCSV() {
         if (dataLog.length === 0) {
-            alert("No data to download!");
+            // Use a custom message box instead of alert
+            showDataCollectorMessage("No data to download!");
             return;
         }
         
@@ -1161,7 +1297,17 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.removeChild(link);
     }
 
-}); // End of DOMContentLoaded
+    // Simple message function to replace alert()
+    function showDataCollectorMessage(message) {
+        const errorEl = document.getElementById('weather-error');
+        errorEl.textContent = message;
+        errorEl.style.display = 'block';
+        setTimeout(() => {
+            errorEl.style.display = 'none';
+        }, 3000);
+    }
 </script>
 </body>
 </html>
+
+
