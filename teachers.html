@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Good Fire vs. Bad Fire: Lesson Infographic</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 36rem;
+            margin: 0 auto;
+        }
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: #dbeafe; /* blue-100 */
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+        .timeline-container {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+        .timeline-container.left {
+            left: 0;
+        }
+        .timeline-container.right {
+            left: 50%;
+        }
+        .timeline-container.left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid white;
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent white;
+        }
+        .timeline-container.right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid white;
+            border-width: 10px 10px 10px 0;
+            border-color: transparent white transparent transparent;
+        }
+        .timeline-container.right::after {
+            left: -16px;
+        }
+        .timeline-container.left::after {
+            right: -17px;
+        }
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 32px;
+            height: 32px;
+            right: -17px;
+            background-color: #3b82f6; /* blue-500 */
+            border: 4px solid #eff6ff; /* blue-50 */
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: white;
+        }
+        .timeline-container.s1::after { content: '1'; }
+        .timeline-container.s2::after { content: '2'; }
+        .timeline-container.s3::after { content: '3'; }
+        .timeline-container.s4::after { content: '4'; }
+        .timeline-container.s5::after { content: '5'; }
+        .timeline-container.s6::after { content: '6'; }
+        .timeline-container.s7::after { content: '7'; }
+
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        
+        @media screen and (max-width: 768px) {
+            .timeline::after {
+                left: 31px;
+            }
+            .timeline-container {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            .timeline-container.left, .timeline-container.right {
+                left: 0%;
+            }
+            .timeline-container.left::before, .timeline-container.right::before {
+                left: 60px;
+                border: medium solid white;
+                border-width: 10px 10px 10px 0;
+                border-color: transparent white transparent transparent;
+            }
+            .timeline-container.left::after, .timeline-container.right::after {
+                left: 15px;
+            }
+        }
+    </style>
+    
+    <!-- 
+      Plan Summary: This infographic visualizes the teacher's guide as a process flow. It starts with the Learning Objectives, walks through the 7-step lesson plan using a vertical timeline, uses a Chart.js Radar Chart to visually represent the "Safe-to-Burn Simulator" concept, and concludes by highlighting the features of the Data Collector tool.
+      
+      Chosen Palette: Brilliant Blues (Using #1e40af, #3b82f6, #93c5fd, #dbeafe, #eff6ff)
+      
+      NO SVG / NO MERMAID JS Confirmation: Confirmed. Neither Mermaid JS nor SVG were used. The process flow is built with HTML/CSS, and the chart uses Chart.js (Canvas).
+    -->
+</head>
+<body class="bg-eff6ff text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-12">
+
+        <!-- Header Section -->
+        <header class="text-center mb-16">
+            <h1 class="text-5xl font-bold text-1e40af mb-4">A Teacher's Guide to "Good Fire vs. Bad Fire"</h1>
+            <p class="text-xl text-3b82f6 max-w-3xl mx-auto">A visual walkthrough of the interactive lesson plan, from warm-up to certification.</p>
+        </header>
+
+        <!-- Section 1: Learning Objectives -->
+        <section class="mb-20">
+            <h2 class="text-3xl font-bold text-1e40af text-center mb-10">Core Learning Objectives</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                
+                <!-- K-2 Card -->
+                <div class="bg-white p-8 rounded-lg shadow-lg border-l-8 border-3b82f6">
+                    <h3 class="text-2xl font-bold text-1e40af mb-4">Grades K-2</h3>
+                    <p class="text-lg text-gray-700">Students will be able to identify that some fires can be **helpful** ("Good Fire") for plants and animals, and will learn **basic fire safety rules**.</p>
+                </div>
+                
+                <!-- 3-5 Card -->
+                <div class="bg-white p-8 rounded-lg shadow-lg border-l-8 border-3b82f6">
+                    <h3 class="text-2xl font-bold text-1e40af mb-4">Grades 3-5</h3>
+                    <p class="text-lg text-gray-700">Students will be able to **explain the difference** between a prescribed burn and a wildfire, identify the **fire triangle**, and understand basic **weather conditions** for a safe burn.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Lesson Flow Timeline -->
+        <section class="mb-20">
+            <h2 class="text-3xl font-bold text-1e40af text-center mb-12">The 7-Step Lesson Flow</h2>
+            
+            <!-- 
+              Visualization Choices: 
+              - Main Lesson Flow: Goal is to "Organize" a process. Chosen: HTML/CSS Vertical Timeline. Justification: This clearly shows the 7 steps in sequence without using SVG or Mermaid.
+              - Simulator Data: Goal is to "Compare" categories (Safe, Caution, Danger). Chosen: Chart.js Radar Chart. Justification: Visually compares multiple variables (Wind, Humidity, Dryness) for different scenarios. Renders to Canvas.
+            -->
+            
+            <div class="timeline">
+                
+                <!-- Step 1 -->
+                <div class="timeline-container left s1">
+                    <div class="timeline-content">
+                        <h3 class="text-2xl font-bold text-3b82f6 mb-2">1. Warm-Up 🔥</h3>
+                        <p class="text-sm font-semibold text-gray-500 mb-2">GOAL: Activate prior knowledge.</p>
+                        <p class="text-gray-700">Introduce the concept that not all fire is "bad" using a book and class discussion to spark curiosity.</p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="timeline-container right s2">
+                    <div class="timeline-content">
+                        <h3 class="text-2xl font-bold text-3b82f6 mb-2">2. Prairie Visualizer 🖼️</h3>
+                        <p class="text-sm font-semibold text-gray-500 mb-2">GOAL: Provide clear visual representation.</p>
+                        <p class="text-gray-700">Show the *effect* of a good fire using "Before/During/After" panels (K-2) or an interactive slider (3-5).</p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="timeline-container left s3">
+                    <div class="timeline-content">
+                        <h3 class="text-2xl font-bold text-3b82f6 mb-2">3. Sorting Game 🎮</h3>
+                        <p class="text-sm font-semibold text-gray-500 mb-2">GOAL: Assess understanding.</p>
+                        <p class="text-gray-700">Students categorize scenarios as "Good Fire ✅" or "Bad Fire ⛔" with instant feedback.</p>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="timeline-container right s4">
+                    <div class="timeline-content">
+                        <h3 class="text-2xl font-bold text-3b82f6 mb-2">4. Quick Quiz ❓</h3>
+                        <p class="text-sm font-semibold text-gray-500 mb-2">GOAL: Formative comprehension check.</p>
+                        <p class="text-gray-700">A multiple-choice quiz with instant scoring to reinforce key concepts from the lesson.</p>
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="timeline-container left s5">
+                    <div class="timeline-content">
+                        <h3 class="text-2xl font-bold text-3b82f6 mb-2">5. Safety Rules 🛡️</h3>
+                        <p class="text-sm font-semibold text-gray-500 mb-2">GOAL: Reinforce critical safety info.</p>
+                        <p class="text-gray-700">Features a safety video for K-2 and a review of crew roles, firebreaks, and "Do/Don't" lists for 3-5.</p>
+                    </div>
+                </div>
+
+                <!-- Step 6 -->
+                <div class="timeline-container right s6">
+                    <div class="timeline-content">
+                        <h3 class="text-2xl font-bold text-3b82f6 mb-2">6. Safe-to-Burn Simulator ⚙️</h3>
+                        <p class="text-sm font-semibold text-gray-500 mb-2">GOAL: Apply knowledge of variables.</p>
+                        <p class="text-gray-700">Students manipulate Wind, Humidity, and Dryness sliders to see how they affect the "Safety Meter."</p>
+                    </div>
+                </div>
+                
+                <!-- Step 7 -->
+                <div class="timeline-container left s7">
+                    <div class="timeline-content">
+                        <h3 class="text-2xl font-bold text-3b82f6 mb-2">7. Celebration Certificate 🏆</h3>
+                        <p class="text-sm font-semibold text-gray-500 mb-2">GOAL: Provide a positive conclusion.</p>
+                        <p class="text-gray-700">Students type their name to generate a printable certificate of completion.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Section 3: Visualizing the Simulator -->
+        <section class="mb-20">
+            <h2 class="text-3xl font-bold text-1e40af text-center mb-4">Visualizing the Simulator</h2>
+            <p class="text-lg text-gray-700 text-center max-w-2xl mx-auto mb-10">Step 6 teaches students how variables create different safety conditions. This chart shows what "Safe," "Caution," and "Danger" might look like based on those variables.</p>
+            
+            <div class="bg-white p-6 md:p-10 rounded-lg shadow-lg">
+                <div class="chart-container">
+                    <canvas id="simulatorChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Advanced Tools -->
+        <section>
+            <h2 class="text-3xl font-bold text-1e40af text-center mb-10">Optional: The Data Collector Tool</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                
+                <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-3b82f6">
+                    <h3 class="text-xl font-bold text-1e40af mb-3">Live Weather</h3>
+                    <p class="text-gray-700">Fetch real-time weather data by city name or geolocation to connect the lesson to the real world.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-3b82f6">
+                    <h3 class="text-xl font-bold text-1e40af mb-3">Manual Log</h3>
+                    <p class="text-gray-700">Allow students to act as scientists, entering data from a school weather station and taking notes.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-3b82f6">
+                    <h3 class="text-xl font-bold text-1e40af mb-3">Download CSV</h3>
+                    <p class="text-gray-700">Export the logged data as a `.csv` file for further analysis in Excel or Google Sheets.</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        // Chart.js Radar Chart for Step 6 Simulator
+        
+        const chartLabels = ['Wind', 'Plant Dryness', ['Low', 'Humidity']];
+
+        const chartData = {
+            labels: chartLabels.map(label => {
+                // Label Wrapping Logic (as required)
+                if (typeof label === 'string' && label.length > 16) {
+                    let words = label.split(' ');
+                    let lines = [];
+                    let currentLine = '';
+                    for (let word of words) {
+                        if ((currentLine + word).length > 16) {
+                            lines.push(currentLine.trim());
+                            currentLine = word + ' ';
+                        } else {
+                            currentLine += word + ' ';
+                        }
+                    }
+                    lines.push(currentLine.trim());
+                    return lines;
+                }
+                return label; // Return as is (string or array)
+            }),
+            datasets: [
+                {
+                    label: 'SAFE',
+                    data: [20, 20, 80], // Low Wind, Low Dryness, High Humidity
+                    fill: true,
+                    backgroundColor: 'rgba(56, 189, 128, 0.2)', // Green
+                    borderColor: 'rgb(56, 189, 128)',
+                    pointBackgroundColor: 'rgb(56, 189, 128)',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: 'rgb(56, 189, 128)'
+                },
+                {
+                    label: 'CAUTION',
+                    data: [50, 50, 50], // Medium everything
+                    fill: true,
+                    backgroundColor: 'rgba(245, 158, 11, 0.2)', // Yellow
+                    borderColor: 'rgb(245, 158, 11)',
+                    pointBackgroundColor: 'rgb(245, 158, 11)',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: 'rgb(245, 158, 11)'
+                },
+                {
+                    label: 'DANGER',
+                    data: [80, 80, 20], // High Wind, High Dryness, Low Humidity
+                    fill: true,
+                    backgroundColor: 'rgba(239, 68, 68, 0.2)', // Red
+                    borderColor: 'rgb(239, 68, 68)',
+                    pointBackgroundColor: 'rgb(239, 68, 68)',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: 'rgb(239, 68, 68)'
+                }
+            ]
+        };
+
+        const chartConfig = {
+            type: 'radar',
+            data: chartData,
+            options: {
+                maintainAspectRatio: false,
+                responsive: true,
+                elements: {
+                    line: {
+                        borderWidth: 3
+                    }
+                },
+                scales: {
+                    r: {
+                        angleLines: {
+                            color: '#dbeafe' // blue-100
+                        },
+                        grid: {
+                            color: '#dbeafe' // blue-100
+                        },
+                        pointLabels: {
+                            font: {
+                                size: 14,
+                                weight: 'bold'
+                            },
+                            color: '#1e40af' // blue-900
+                        },
+                        ticks: {
+                            backdropColor: '#fff',
+                            color: '#3b82f6' // blue-500
+                        },
+                        min: 0,
+                        max: 100
+                    }
+                },
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                // Tooltip Configuration (as required)
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) {
+                                  return label.join(' ');
+                                } else {
+                                  return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        };
+
+        window.onload = () => {
+            const ctx = document.getElementById('simulatorChart').getContext('2d');
+            new Chart(ctx, chartConfig);
+        };
+    </script>
+</body>
+</html>
+
