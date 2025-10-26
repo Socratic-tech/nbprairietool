@@ -160,23 +160,43 @@
             <!-- Step 1: Warm-Up -->
             <section id="step-1" class="lesson-step">
                 <h2 class="text-3xl font-bold text-blue-800 mb-4">Step 1: Warm-Up</h2>
-                <div class="text-lg space-y-4">
-                    <p class="font-semibold text-gray-700">Teacher's Prompt:</p>
-                    <!-- K-2 Content -->
-                    <div class="grade-content p-4 bg-yellow-100 border-l-4 border-yellow-500 rounded-r-lg" data-grade="k-2">
-                        <p>"Look at a picture of a prairie. What do you see? Now, imagine a fire on the prairie. Do you think fire can be good? How could fire *help* a prairie?"</p>
-                        <p class="mt-2 text-sm text-gray-600">(Encourage students to share ideas about clearing old plants or helping seeds.)</p>
-                    </div>
-                    <!-- 3-5 Content -->
-                    <div class="grade-content p-4 bg-yellow-100 border-l-4 border-yellow-500 rounded-r-lg" data-grade="3-5">
-                        <p>"Today we're talking about 'prescribed burns,' which is a fancy way of
-                        saying a planned, 'Good Fire.' To have *any* fire, you need three things. Can anyone remember the 'Fire Triangle'?"</p>
-                        <ul class="list-disc list-inside mt-2 ml-4">
-                            <li><strong>Fuel</strong> (like dry grass)</li>
-                            <li><strong>Oxygen</strong> (in the air)</li>
-                            <li><strong>Heat</strong> (like a spark or match)</li>
+                
+                <!-- K-2 Content -->
+                <div class="grade-content space-y-4" data-grade="k-2">
+                    <p class="font-semibold text-gray-700 text-lg">Teacher's Prompt:</p>
+                    <div class="p-4 bg-yellow-100 border-l-4 border-yellow-500 rounded-r-lg">
+                        <img src="https://drive.google.com/file/d/161TE7z5R1YwIm5hFB0cRhDYKRsg9uTgC/view?usp=sharing" 
+                             alt="Book Cover: Fire Shapes the World"
+                             class="float-right ml-4 mb-2 w-36 rounded-lg shadow-md">
+                        
+                        <p class="text-lg">"Let's read a book like 'Fire Shapes the World.' Looking at the cover, what do you think this book is about?"</p>
+                        
+                        <h4 class="font-semibold text-gray-800 mt-6 mb-2">Discussion Questions:</h4>
+                        <ul class="list-disc list-inside text-base space-y-1">
+                            <li>What did the fire in the story do?</li>
+                            <li>Was the fire scary? Was it helpful?</li>
+                            <li>How could fire *help* a prairie?</li>
                         </ul>
-                        <p class="mt-2 text-sm text-gray-600">(Discuss how removing one 'side' of the triangle stops a fire.)</p>
+                    </div>
+                </div>
+                
+                <!-- 3-5 Content -->
+                <div class="grade-content space-y-4" data-grade="3-5">
+                    <p class="font-semibold text-gray-700 text-lg">Teacher's Prompt:</p>
+                    <div class="p-4 bg-yellow-100 border-l-4 border-yellow-500 rounded-r-lg">
+                        <img src="https://placehold.co/150x150/F9E6A7/333333?text=Book+Cover" 
+                             alt="Book Cover: Fire Shapes the World"
+                             class="float-right ml-4 mb-2 w-36 rounded-lg shadow-md">
+
+                        <p class="text-lg">"We're going to talk about 'Good Fire.' After reading a book like 'Fire Shapes the World,' let's think about what we learned."</p>
+
+                        <h4 class="font-semibold text-gray-800 mt-6 mb-2">Discussion Questions:</h4>
+                        <ul class="list-disc list-inside text-base space-y-1">
+                            <li>What are some ways fire *helps* the land in the book?</li>
+                            <li>Why did people in the story use fire?</li>
+                            <li>What's the difference between a "Good Fire" (like in the book) and a "Bad Fire" (like a wildfire on the news)?</li>
+                            <li>What 3 things does a fire need to burn? (Hint: Fire Triangle 🔥)</li>
+                        </ul>
                     </div>
                 </div>
             </section>
@@ -1039,7 +1059,7 @@
         // Wind: 0mph = 0, 25+mph = 100
         let windVal = Math.min(Math.round((current.wind_speed_10m / 25) * 100), 100);
         
-        // Humidity: 0% = 100, 100% = 0 (slider is inverted: 0=dry, 100=damp)
+        // Humidity: 0% = 0, 100% = 100 (slider is 0=dry, 100=damp)
         let humidityVal = current.relative_humidity_2m;
         
         document.getElementById('wind-slider').value = windVal;
@@ -1309,5 +1329,6 @@
 </script>
 </body>
 </html>
+
 
 
